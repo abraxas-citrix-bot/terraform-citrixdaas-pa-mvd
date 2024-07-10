@@ -1,0 +1,8 @@
+variables:
+  TERRAFORM_MODULE_DIR: ${CI_PROJECT_DIR}
+  TERRAFORM_MODULE_NAME: ${CI_PROJECT_NAME}
+  TERRAFORM_MODULE_SYSTEM: azurerg
+
+include:
+  template: Terraform-Module.gitlab-ci.yml
+
