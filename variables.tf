@@ -21,3 +21,10 @@ variable "application-cmd_working_directory" {
   type        = string
   default     = "%HOMEDRIVE%%HOMEPATH%"
 }
+
+variable "alessio" {
+
+  default = "Linux ist mein Freund"
+  description = "Value"
+  
+}
