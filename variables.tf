@@ -24,7 +24,7 @@ variable "application-cmd_working_directory" {
 
 variable "alessio" {
 
-  default = "Linux ist mein Freund"
+  default     = "Linux ist mein Freund"
   description = "Value"
-  
+
 }

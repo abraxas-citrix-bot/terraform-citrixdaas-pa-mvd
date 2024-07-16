@@ -446,7 +446,7 @@ MIT License - Copyright (c) 2021 The terraform-docs Authors.
 
 | Name                                                      | Version |
 | --------------------------------------------------------- | ------- |
-| <a name="provider_citrix"></a> [citrix](#provider_citrix) | >=0.6.1 |
+| <a name="provider_citrix"></a> [citrix](#provider_citrix) | 0.6.2   |
 
 ## Modules
 
@@ -462,6 +462,7 @@ No modules.
 
 | Name                                                                                                                                                   | Description                 | Type     | Default                            | Required |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- | -------- | ---------------------------------- | :------: |
+| <a name="input_alessio"></a> [alessio](#input_alessio)                                                                                                 | Value                       | `string` | `"Linux ist mein Freund"`          |    no    |
 | <a name="input_application-cmd_admin_name"></a> [application-cmd_admin_name](#input_application-cmd_admin_name)                                        | The name of the application | `string` | `"CMD"`                            |    no    |
 | <a name="input_application-cmd_command_line_executable"></a> [application-cmd_command_line_executable](#input_application-cmd_command_line_executable) | The command line executable | `string` | `"C:\\Windows\\system32\\cmd.exe"` |    no    |
 | <a name="input_application-cmd_published_name"></a> [application-cmd_published_name](#input_application-cmd_published_name)                            | The name of the application | `string` | `"Windows Command Prompt"`         |    no    |
