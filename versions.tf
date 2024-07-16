@@ -8,5 +8,11 @@ terraform {
       source  = "hashicorp/azurerm"
       version = ">= 1.32"
     }
+
+    citrix = {
+      source  = "citrix/citrix"
+      version = ">=0.6.1"
+    }
+
   }
 }

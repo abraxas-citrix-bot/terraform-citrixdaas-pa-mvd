@@ -5,4 +5,3 @@ variables:
 
 include:
   template: Terraform-Module.gitlab-ci.yml
-

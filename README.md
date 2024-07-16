@@ -115,17 +115,17 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-      with:
-        ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
-    - name: Render terraform docs and push changes back to PR
-      uses: terraform-docs/gh-actions@main
-      with:
-        working-dir: .
-        output-file: README.md
-        output-method: inject
-        git-push: "true"
+      - name: Render terraform docs and push changes back to PR
+        uses: terraform-docs/gh-actions@main
+        with:
+          working-dir: .
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
 ```
 
 Read more about [terraform-docs GitHub Action] and its configuration and
@@ -145,7 +145,8 @@ repos:
     rev: "v0.18.0"
     hooks:
       - id: terraform-docs-go
-        args: ["markdown", "table", "--output-file", "README.md", "./mymodule/path"]
+        args:
+          ["markdown", "table", "--output-file", "README.md", "./mymodule/path"]
 ```
 
 Then run:
@@ -345,9 +346,9 @@ In order to install a plugin the following steps are needed:
 **Important notes:**
 
 - if the plugin file name is different than the example above, terraform-docs won't
-be able to to pick it up nor register it properly
+  be able to to pick it up nor register it properly
 - you can only use plugin thorough `.terraform-docs.yml` file and it cannot be used
-with CLI arguments
+  with CLI arguments
 
 To create a new plugin create a new repository called `tfdocs-format-<NAME>` with
 following `main.go`:
@@ -430,3 +431,44 @@ MIT License - Copyright (c) 2021 The terraform-docs Authors.
 [tfdocs-format-template]: https://github.com/terraform-docs/tfdocs-format-template
 [our website]: https://terraform-docs.io/
 [User Guide]: https://terraform-docs.io/user-guide/introduction/
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## Requirements
+
+| Name                                                                     | Version |
+| ------------------------------------------------------------------------ | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.2  |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement_azurerm)       | >= 1.32 |
+| <a name="requirement_citrix"></a> [citrix](#requirement_citrix)          | >=0.6.1 |
+
+## Providers
+
+| Name                                                      | Version |
+| --------------------------------------------------------- | ------- |
+| <a name="provider_citrix"></a> [citrix](#provider_citrix) | >=0.6.1 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name                                                                                                                          | Type     |
+| ----------------------------------------------------------------------------------------------------------------------------- | -------- |
+| [citrix_application.application-cmd](https://registry.terraform.io/providers/citrix/citrix/latest/docs/resources/application) | resource |
+
+## Inputs
+
+| Name                                                                                                                                                   | Description                 | Type     | Default                            | Required |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- | -------- | ---------------------------------- | :------: |
+| <a name="input_application-cmd_admin_name"></a> [application-cmd_admin_name](#input_application-cmd_admin_name)                                        | The name of the application | `string` | `"CMD"`                            |    no    |
+| <a name="input_application-cmd_command_line_executable"></a> [application-cmd_command_line_executable](#input_application-cmd_command_line_executable) | The command line executable | `string` | `"C:\\Windows\\system32\\cmd.exe"` |    no    |
+| <a name="input_application-cmd_published_name"></a> [application-cmd_published_name](#input_application-cmd_published_name)                            | The name of the application | `string` | `"Windows Command Prompt"`         |    no    |
+| <a name="input_application-cmd_working_directory"></a> [application-cmd_working_directory](#input_application-cmd_working_directory)                   | The working directory       | `string` | `"%HOMEDRIVE%%HOMEPATH%"`          |    no    |
+
+## Outputs
+
+No outputs.
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
