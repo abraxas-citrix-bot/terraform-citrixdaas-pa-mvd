@@ -1,0 +1,49 @@
+trim trailing whitespace................................................................[42mPassed[m
+fix end of files........................................................................[42mPassed[m
+check yaml..............................................................................[42mPassed[m
+check for added large files.............................................................[42mPassed[m
+check builtin type constructor use..................................(no files to check)[46;30mSkipped[m
+check BOM - deprecated: use fix-byte-order-marker.......................................[42mPassed[m
+check json..........................................................(no files to check)[46;30mSkipped[m
+check xml...........................................................(no files to check)[46;30mSkipped[m
+check yaml..............................................................................[42mPassed[m
+check for merge conflicts...............................................................[42mPassed[m
+check that scripts with shebangs are executable.........................................[42mPassed[m
+check for broken symlinks...........................................(no files to check)[46;30mSkipped[m
+mixed line ending.......................................................................[42mPassed[m
+detect private key......................................................................[42mPassed[m
+pretty format json..................................................(no files to check)[46;30mSkipped[m
+detect aws credentials..................................................................[42mPassed[m
+don't commit to branch..................................................................[42mPassed[m
+don't commit to branch..................................................................[42mPassed[m
+Terraform fmt...........................................................................[42mPassed[m
+Terraform validate with tflint..........................................................[42mPassed[m
+Terraform docs..........................................................................[41mFailed[m
+[2m- hook id: terraform_docs[m
+[2m- files were modified by this hook[m
+Terraform validate with tfsec (deprecated, use "terraform_trivy").......................[42mPassed[m
+Terraform validate......................................................................[41mFailed[m
+[2m- hook id: terraform_validate[m
+[2m- exit code: 1[m
+
+[0m[32mCommand 'terraform init' successfully done: .[0m
+[0m[31mValidation failed: .[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mReference to undeclared resource[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 5, in resource "citrix_application" "application-cmd":
+[31m│[0m [0m   5:   delivery_groups = [[4mcitrix_delivery_group.dg[0m.id][0m
+[31m│[0m [0m
+[31m│[0m [0mA managed resource "citrix_delivery_group" "dg" has not been declared in
+[31m│[0m [0mthe root module.
+[31m╵[0m[0m
+
+Validate GitHub Workflows...............................................................[42mPassed[m
+prettier................................................................................[41mFailed[m
+[2m- hook id: prettier[m
+[2m- files were modified by this hook[m
+
+.gitlab-ci.yml[2K[1G.gitattributes[2K[1G.pre-commit-config.yaml[2K[1Gdocs/BEST-PRACTICES.md[2K[1G.github/workflows/megalinter.yaml[2K[1GCODE_OF_CONDUCT.md[2K[1GREADME copy.md[2K[1G.github/workflows/tagging.yaml[2K[1Gdocs/PR_TEMPLATE.md[2K[1Gdocs/BUG_REPORT.md[2K[1G.github/workflows/commit-message-validator.yaml[2K[1Gmain.tf[2K[1Goutputs.tf[2K[1G.github/dependabot.yml[2K[1G.github/pull_request_template.md[2K[1Gversions.tf[2K[1Gdocs/FEATURE_REQUEST.md[2K[1G.github/labeler.yml[2K[1GCODEOWNERS.md[2K[1G.github/reviewers.yml[2K[1GREADME.md[2K[1GREADME.md
+.github/workflows/labelling.yaml[2K[1Gvariables.tf[2K[1Gbuild/sync_template.ps1[2K[1Gkics.config[2K[1G.gitignore[2K[1G.github/workflows/dependabot.yaml[2K[1Gbuild/init.ps1[2K[1GLICENSE[2K[1Gbuild/build.ps1[2K[1G
+
+test
