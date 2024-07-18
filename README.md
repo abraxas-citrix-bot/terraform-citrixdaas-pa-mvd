@@ -433,20 +433,18 @@ MIT License - Copyright (c) 2021 The terraform-docs Authors.
 [User Guide]: https://terraform-docs.io/user-guide/introduction/
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
-| Name                                                                     | Version |
-| ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.2  |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement_azurerm)       | >= 1.32 |
-| <a name="requirement_citrix"></a> [citrix](#requirement_citrix)          | >=0.6.1 |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
+| <a name="requirement_citrix"></a> [citrix](#requirement\_citrix) | >=0.6.1 |
 
 ## Providers
 
-| Name                                                      | Version |
-| --------------------------------------------------------- | ------- |
-| <a name="provider_citrix"></a> [citrix](#provider_citrix) | 0.6.2   |
+| Name | Version |
+|------|---------|
+| <a name="provider_citrix"></a> [citrix](#provider\_citrix) | 0.6.2 |
 
 ## Modules
 
@@ -454,21 +452,22 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                          | Type     |
-| ----------------------------------------------------------------------------------------------------------------------------- | -------- |
-| [citrix_application.application-cmd](https://registry.terraform.io/providers/citrix/citrix/latest/docs/resources/application) | resource |
+| Name | Type |
+|------|------|
+| [citrix_application.application_cmd](https://registry.terraform.io/providers/citrix/citrix/latest/docs/resources/application) | resource |
 
 ## Inputs
 
-| Name                                                                                                                                                   | Description                 | Type     | Default                            | Required |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- | -------- | ---------------------------------- | :------: |
-| <a name="input_application-cmd_admin_name"></a> [application-cmd_admin_name](#input_application-cmd_admin_name)                                        | The name of the application | `string` | `"CMD"`                            |    no    |
-| <a name="input_application-cmd_command_line_executable"></a> [application-cmd_command_line_executable](#input_application-cmd_command_line_executable) | The command line executable | `string` | `"C:\\Windows\\system32\\cmd.exe"` |    no    |
-| <a name="input_application-cmd_published_name"></a> [application-cmd_published_name](#input_application-cmd_published_name)                            | The name of the application | `string` | `"Windows Command Prompt"`         |    no    |
-| <a name="input_application-cmd_working_directory"></a> [application-cmd_working_directory](#input_application-cmd_working_directory)                   | The working directory       | `string` | `"%HOMEDRIVE%%HOMEPATH%"`          |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_application_cmd_admin_name"></a> [application\_cmd\_admin\_name](#input\_application\_cmd\_admin\_name) | The name of the application | `string` | `"CMD"` | no |
+| <a name="input_application_cmd_command_line_executable"></a> [application\_cmd\_command\_line\_executable](#input\_application\_cmd\_command\_line\_executable) | The command line executable | `string` | `"C:\\Windows\\system32\\cmd.exe"` | no |
+| <a name="input_application_cmd_published_name"></a> [application\_cmd\_published\_name](#input\_application\_cmd\_published\_name) | The name of the application | `string` | `"Windows Command Prompt"` | no |
+| <a name="input_application_cmd_working_directory"></a> [application\_cmd\_working\_directory](#input\_application\_cmd\_working\_directory) | The working directory | `string` | `"%HOMEDRIVE%%HOMEPATH%"` | no |
+| <a name="input_deliverygroup_name"></a> [deliverygroup\_name](#input\_deliverygroup\_name) | Delivery group | `set(string)` | n/a | yes |
+| <a name="input_description_pubblished_apps"></a> [description\_pubblished\_apps](#input\_description\_pubblished\_apps) | For the description | `string` | n/a | yes |
 
 ## Outputs
 
 No outputs.
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
