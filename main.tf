@@ -10,3 +10,7 @@ resource "citrix_application" "application-cmd" {
     working_directory       = var.application-cmd_working_directory
   }
 }
+
+
+
+# test kommentar
