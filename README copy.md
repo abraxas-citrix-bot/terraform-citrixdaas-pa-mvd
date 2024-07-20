@@ -1,8 +1,156 @@
+<<<<<<< HEAD
 <!-- BEGIN_TF_DOCS -->
+=======
+[![Maintained](https://img.shields.io/badge/Maintained%20by-MVD-success)](https://www.abraxas.ch)
+[![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.1.6-blue)](https://terraform.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Guidelines](#guidelines)
+- [Share the Love](#share-the-love)
+- [Contributing](#contributing)
+- [Bug Reports and Feature Requests](#bug-reports--feature-requests)
+- [Developing](#developing)
+- [Requirements](#requirements)
+- [Providers](#providers)
+- [Modules](#modules)
+- [Resources](#resources)
+- [Inputs](#inputs)
+- [Outputs](#outputs)
+
+---
+
+## Introduction
+
+This is a template for Terraform modules.
+
+It is part of our [MVD](https://www.abraxas.ch) Automation Forces Open Source community library to give you a quick start into Infrastructure as Code deployments with Terraform.
+
+We have a lot of Terraform modules that are Open Source and maintained by the [MVD](https://www.abraxas.ch) staff.
+
+Please check the links for more info, including usage information and full documentation:
+
+- [MVD Website](https://www.abraxas.ch)
+- [MVD Documentation](https://docs.MVD.io)
+- [Twitter](https://twitter.com/MVD_io)
+- [LinkedIn](https://www.linkedin.com/company/MVD_io)
+
+---
+
+## Guidelines
+
+We are using the following guidelines to write code and make it easier for everyone to follow a distinctive guideline.
+Please check these links before starting to work on changes.
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
+Git Naming Conventions are an important part of the development process.
+They describe how Branches, Commit Messages,
+Pull Requests and Tags should look like to make them easily understandable for everybody in the development chain.
+
+[Git Naming Conventions](https://namingconvention.org/git/)
+
+He Conventional Commits specification is a lightweight convention on top of commit messages.
+It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of.
+
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+The better a Pull Request description is, the better a review can understand and decide on how to review the changes.
+This improves implementation speed and reduces communication between the requester,
+and the reviewer is resulting in much less overhead.
+
+[Writing A Great Pull Request Description](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
+
+Versioning is a crucial part for Terraform Stacks and Modules.
+Without version tags you cannot clearly create a stable environment
+and be sure that your latest changes will not crash your production environment (sure it still can happen,
+but we are trying our best to implement everything that we can to reduce the risk)
+
+[Semantic Versioning](https://semver.org)
+
+[Terraform Naming Conventions](https://www.terraform-best-practices.com/naming)
+
+---
+
+## Share the Love
+
+Like this project?
+Please give it a ★ on [our GitHub](https://github.com/MVD-io/terraform-module-template)!
+It helps us a lot.
+
+---
+
+## Contributing
+
+### Bug Reports & Feature Requests
+
+Please use the issue tracker to report any bugs or file feature requests.
+
+### Developing
+
+If you are interested in being a contributor and want to get involved in developing this project, we would love to hear from you! Email us.
+
+PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
+
+- Fork the repo on GitHub
+- Clone the project to your own machine
+- Commit changes to your own branch
+- Push your work back up to your fork
+- Submit a Pull Request so that we can review your changes
+
+> NOTE: Be sure to merge the latest changes from "upstream" before making a pull request!
+
+---
+
+## Usage
+
+### Installation
+
+For the first time using this template, necessary tools need to be installed.
+A script to prepare a Mac is provided under ./build/init.ps1
+
+This script will install the following dependencies:
+
+- [pre-commit](https://github.com/pre-commit/pre-commit)
+- [terraform-docs](https://github.com/terraform-docs/terraform-docs)
+- [tflint](https://github.com/terraform-linters/tflint)
+- [tfsec](https://github.com/aquasecurity/tfsec)
+- [checkov](https://github.com/bridgecrewio/checkov)
+- [terrascan](https://github.com/accurics/terrascan)
+- [kics](https://github.com/Checkmarx/kics)
+
+This script configures:
+
+- global git template under ~/.git-template
+- global pre-commit hooks for prepare-commit-msg and commit-msg under ~/.git-template/hooks
+- GitHub actions:
+  - linting and checks for pull requests from dev to master/main
+  - automatic tagging and release creation on pushes to master/main
+  - dependabot updates
+
+It currently supports the automated installation for macOS. Support for Windows and Linux will be available soon.
+
+### Synchronisation
+
+We provided a script under ./build/sync_template.ps1 to fetch the latest changes from this template repository.
+Please be aware that this is mainly a copy operation which means all your current changes have to be committed first,
+and after running the script, you have to merge these changes into your codebase.
+
+### Configuration
+
+---
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+>>>>>>> 43e5bd27807f12a9616fb6cc66e720743bdcaab7
 ## Requirements
 
 | Name | Version |
 |------|---------|
+<<<<<<< HEAD
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.2 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.11.0, < 4.0 |
 
@@ -11,6 +159,14 @@
 | Name | Version |
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >=3.11.0, < 4.0 |
+=======
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.1.6 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.5.0 |
+
+## Providers
+
+No providers.
+>>>>>>> 43e5bd27807f12a9616fb6cc66e720743bdcaab7
 
 ## Modules
 
@@ -18,6 +174,7 @@ No modules.
 
 ## Resources
 
+<<<<<<< HEAD
 | Name | Type |
 |------|------|
 | [azurerm_network_security_group.nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group) | resource |
@@ -26,11 +183,15 @@ No modules.
 | [azurerm_network_security_rule.predefined_rules](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_rule) | resource |
 | [azurerm_network_security_rule.predefined_rules_for](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_rule) | resource |
 | [azurerm_resource_group.nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
+=======
+No resources.
+>>>>>>> 43e5bd27807f12a9616fb6cc66e720743bdcaab7
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+<<<<<<< HEAD
 | <a name="input_custom_rules"></a> [custom\_rules](#input\_custom\_rules) | Security rules for the network security group using this format name = [name, priority, direction, access, protocol, source\_port\_range, destination\_port\_range, source\_address\_prefix, destination\_address\_prefix, description] | `any` | `[]` | no |
 | <a name="input_destination_address_prefix"></a> [destination\_address\_prefix](#input\_destination\_address\_prefix) | Destination address prefix to be applied to all predefined rules. list(string) only allowed one element (CIDR, `*`, source IP range or Tags). Example ["10.0.3.0/24"] or ["VirtualNetwork"] | `list(string)` | <pre>[<br>  "*"<br>]</pre> | no |
 | <a name="input_destination_address_prefixes"></a> [destination\_address\_prefixes](#input\_destination\_address\_prefixes) | Destination address prefix to be applied to all predefined rules. Example ["10.0.3.0/32","10.0.3.128/32"] | `list(string)` | `null` | no |
@@ -53,3 +214,13 @@ No modules.
 | <a name="output_network_security_group_id"></a> [network\_security\_group\_id](#output\_network\_security\_group\_id) | The id of newly created network security group |
 | <a name="output_network_security_group_name"></a> [network\_security\_group\_name](#output\_network\_security\_group\_name) | The name of newly created network security group |
 <!-- END_TF_DOCS -->
+=======
+| <a name="input_tags"></a> [tags](#input\_tags) | A list of tags to apply to the resource | `map(string)` | `{}` | no |
+
+## Outputs
+
+No outputs.
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- markdownlint-disable -->
+<!-- prettier-ignore-end -->
+>>>>>>> 43e5bd27807f12a9616fb6cc66e720743bdcaab7
