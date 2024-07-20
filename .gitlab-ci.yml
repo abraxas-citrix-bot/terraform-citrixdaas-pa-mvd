@@ -1,7 +1,53 @@
-variables:
-  TERRAFORM_MODULE_DIR: ${CI_PROJECT_DIR}
-  TERRAFORM_MODULE_NAME: ${CI_PROJECT_NAME}
-  TERRAFORM_MODULE_SYSTEM: azurerg
+ # variables:
+ # TERRAFORM_MODULE_DIR: ${CI_PROJECT_DIR}
+ # TERRAFORM_MODULE_NAME: ${CI_PROJECT_NAME}
+ # TERRAFORM_MODULE_SYSTEM: azurerg
 
-include:
-  template: Terraform-Module.gitlab-ci.yml
+#include:
+#  template: Terraform-Module.gitlab-ci.yml
+
+#default:
+#  tags:
+#    - terraform
+
+stages:
+  - validate
+  - version
+  - publish
+
+validate:
+  stage: validate
+  image: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
+  script:
+    - cd ${CI_PROJECT_DIR}
+    - gitlab-terraform init
+    - gitlab-terraform validate
+
+semantic_release-ci:
+  stage: version
+  image: node:lts ## -> Someone should create a ABX Internal Image here
+  when: always
+  only:
+    refs:
+    - branches
+  before_script:
+    - export CI_NPMRC_FILE_PATH=${CI_NPMRC_FILE_PATH:-./.npmrc}
+    - if [ ! -z "$CI_NPMRC_FILE_TEMPLATE" ]; then echo -n "${CI_NPMRC_FILE_TEMPLATE}" > $CI_NPMRC_FILE_PATH; else echo "skip replacing CI .npmrc file (not set by user)"; fi
+    - npm install -g semantic-release @semantic-release/gitlab-config @semantic-release/gitlab
+
+  script:
+    - npx semantic-release
+
+upload_terraform_module:
+  image: curlimages/curl:7.84.0
+  stage: publish
+  variables:
+    TERRAFORM_MODULE_DIR: ${CI_PROJECT_DIR}
+    TERRAFORM_MODULE_NAME: ${CI_PROJECT_NAME}
+    TERRAFORM_MODULE_SYSTEM: local
+    TERRAFORM_MODULE_VERSION: ${CI_COMMIT_TAG}
+  script:
+    - tar -cvzf ${TERRAFORM_MODULE_NAME}-${TERRAFORM_MODULE_SYSTEM}-${TERRAFORM_MODULE_VERSION}.tgz -C ${TERRAFORM_MODULE_DIR} --exclude=./.git .
+    - 'curl --fail --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file ${TERRAFORM_MODULE_NAME}-${TERRAFORM_MODULE_SYSTEM}-${TERRAFORM_MODULE_VERSION}.tgz ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/terraform/modules/${TERRAFORM_MODULE_NAME}/${TERRAFORM_MODULE_SYSTEM}/${TERRAFORM_MODULE_VERSION}/file'
+  only:
+    - tags

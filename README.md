@@ -455,6 +455,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [citrix_application.application_cmd](https://registry.terraform.io/providers/citrix/citrix/latest/docs/resources/application) | resource |
+| [citrix_application_icon.example_application_icon](https://registry.terraform.io/providers/citrix/citrix/latest/docs/resources/application_icon) | resource |
 
 ## Inputs
 
@@ -464,8 +465,11 @@ No modules.
 | <a name="input_application_cmd_command_line_executable"></a> [application\_cmd\_command\_line\_executable](#input\_application\_cmd\_command\_line\_executable) | The command line executable | `string` | `"C:\\Windows\\system32\\cmd.exe"` | no |
 | <a name="input_application_cmd_published_name"></a> [application\_cmd\_published\_name](#input\_application\_cmd\_published\_name) | The name of the application | `string` | `"Windows Command Prompt"` | no |
 | <a name="input_application_cmd_working_directory"></a> [application\_cmd\_working\_directory](#input\_application\_cmd\_working\_directory) | The working directory | `string` | `"%HOMEDRIVE%%HOMEPATH%"` | no |
-| <a name="input_deliverygroup_name"></a> [deliverygroup\_name](#input\_deliverygroup\_name) | Delivery group | `set(string)` | n/a | yes |
-| <a name="input_description_pubblished_apps"></a> [description\_pubblished\_apps](#input\_description\_pubblished\_apps) | For the description | `string` | n/a | yes |
+| <a name="input_client_id"></a> [client\_id](#input\_client\_id) | The Citrix Cloud client id | `string` | n/a | yes |
+| <a name="input_client_secret"></a> [client\_secret](#input\_client\_secret) | The Citrix Cloud client secret | `string` | n/a | yes |
+| <a name="input_customer_id"></a> [customer\_id](#input\_customer\_id) | The Citrix Cloud customer id | `string` | n/a | yes |
+| <a name="input_deliverygroup_name"></a> [deliverygroup\_name](#input\_deliverygroup\_name) | Delivery group | `set(string)` | <pre>[<br>  "6919cebe-4151-40a8-8efd-9047694377a6"<br>]</pre> | no |
+| <a name="input_description_pubblished_apps"></a> [description\_pubblished\_apps](#input\_description\_pubblished\_apps) | For the description | `string` | `"value"` | no |
 
 ## Outputs
 

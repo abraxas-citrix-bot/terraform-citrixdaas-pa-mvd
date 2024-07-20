@@ -12,3 +12,10 @@ terraform {
 
   }
 }
+
+
+provider "citrix" {
+  customer_id   = var.customer_id
+  client_id     = var.client_id
+  client_secret = var.client_secret
+}
