@@ -1,14 +1,7 @@
 variables:
-<<<<<<< HEAD
-    TERRAFORM_MODULE_DIR: ${CI_PROJECT_DIR}
-    TERRAFORM_MODULE_NAME: ${CI_PROJECT_NAME}
-    TERRAFORM_MODULE_SYSTEM: azurerg
-
-=======
   TERRAFORM_MODULE_DIR: ${CI_PROJECT_DIR}
   TERRAFORM_MODULE_NAME: ${CI_PROJECT_NAME}
   TERRAFORM_MODULE_SYSTEM: azurerg
->>>>>>> 43e5bd27807f12a9616fb6cc66e720743bdcaab7
 
 include:
   template: Terraform-Module.gitlab-ci.yml
