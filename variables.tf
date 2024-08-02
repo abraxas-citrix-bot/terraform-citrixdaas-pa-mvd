@@ -1,22 +1,32 @@
-variable "application_cmd_admin_name" {
+variable "citrix_apllication_name" {
   description = "The name of the application"
   type        = string
 
 }
 
-variable "application_cmd_published_name" {
+variable "citrix_apllication_description" {
+  description = "Application Description"
+}
+
+variable "citrix_apllication_published_name" {
   description = "The name of the application"
   type        = string
 
 }
 
-variable "application_cmd_command_line_executable" {
+variable "citrix_application_command_line_arguments" {
+  description = "cmd arguments"
+  type = string
+}
+
+
+variable "citrix_application_command_line_executable" {
   description = "The command line executable"
   type        = string
 
 }
 
-variable "application_cmd_working_directory" {
+variable "citrix_application_working_directory" {
   description = "The working directory"
   type        = string
 
@@ -28,21 +38,20 @@ variable "deliverygroup_name" {
 
 }
 
-variable "description_pubblished_apps" {
-  description = "For the description"
-  type        = string
-
-}
-variable "visibility_user" {
+variable "citrix_apllication_visibility" {
   description = "The visibility of the application"
   type        = set(string)
 
 }
-
 
 variable "application_icon" {
   type        = string
   description = "The icon of the application"
 
 
+}
+
+variable "citrix_application_folder" {
+  description = "Application Folder"
+  type = string
 }
