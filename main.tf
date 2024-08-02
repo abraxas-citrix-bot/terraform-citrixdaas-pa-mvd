@@ -8,13 +8,13 @@ resource "citrix_application" "published_application" {
     command_line_executable = var.citrix_application_command_line_executable
     working_directory       = var.citrix_application_working_directory
   }
-  delivery_groups = var.deliverygroup_name
+  delivery_groups = var.citrix_deliverygroup_name
   icon            = citrix_application_icon.my_citrix_application_icon.id
   limit_visibility_to_users = var.citrix_apllication_visibility
 }
 
 resource "citrix_application_icon" "my_citrix_application_icon" {
-  raw_data = var.application_icon
+  raw_data = var.citrix_application_icon
 }
 
 resource "citrix_application_folder" "application_folder" {
