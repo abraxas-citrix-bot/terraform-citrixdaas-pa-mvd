@@ -9,13 +9,13 @@ resource "citrix_application" "published_application" {
     working_directory       = var.citrix_application_working_directory
   }
   delivery_groups = var.citrix_deliverygroup_name
-  icon            = citrix_application_icon.my_citrix_application_icon.id
+  # icon            = citrix_application_icon.my_citrix_application_icon.id
   limit_visibility_to_users = var.citrix_apllication_visibility
 }
 
-resource "citrix_application_icon" "my_citrix_application_icon" {
-  raw_data = var.citrix_application_icon
-}
+# resource "citrix_application_icon" "my_citrix_application_icon" {
+#   raw_data = var.citrix_application_icon
+# }
 
 resource "citrix_application_folder" "application_folder" {
   name               = var.citrix_application_folder
