@@ -32,7 +32,7 @@ variable "citrix_application_working_directory" {
 
 }
 
-variable "deliverygroup_name" {
+variable "citrix_deliverygroup_name" {
   description = "Delivery group"
   type        = set(string)
 
@@ -44,7 +44,7 @@ variable "citrix_apllication_visibility" {
 
 }
 
-variable "application_icon" {
+variable "citrix_application_icon" {
   type        = string
   description = "The icon of the application"
 
