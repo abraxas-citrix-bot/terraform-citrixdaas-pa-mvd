@@ -44,12 +44,12 @@ variable "citrix_apllication_visibility" {
 
 }
 
-variable "citrix_application_icon" {
-  type        = string
-  description = "The icon of the application"
+# variable "citrix_application_icon" {
+#   type        = string
+#   description = "The icon of the application"
 
 
-}
+# }
 
 variable "citrix_application_folder" {
   description = "Application Folder"
