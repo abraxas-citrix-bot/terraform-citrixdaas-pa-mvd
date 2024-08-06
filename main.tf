@@ -22,7 +22,6 @@ resource "citrix_application" "published_application" {
 #  name               = var.citrix_application_folder
 #}
 
-
 /*
 # citrix_daas_application.example-application nur ein test:
 resource "citrix_application" "application_cmd" {
