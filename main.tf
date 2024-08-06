@@ -2,7 +2,7 @@ resource "citrix_application" "published_application" {
   name                    = var.citrix_apllication_name
   description             = var.citrix_apllication_description
   published_name          = var.citrix_apllication_published_name
-  application_folder_path = citrix_application_folder.application_folder.path
+  application_folder_path = var.citrix_application_folder
   installed_app_properties = {
     command_line_arguments  = var.citrix_application_command_line_arguments
     command_line_executable = var.citrix_application_command_line_executable
@@ -17,9 +17,10 @@ resource "citrix_application" "published_application" {
 #   raw_data = var.citrix_application_icon
 # }
 
-resource "citrix_application_folder" "application_folder" {
-  name               = var.citrix_application_folder
-}
+# Application Folder muss im main erstellt werden, da nicht im Loop:
+#resource "citrix_application_folder" "application_folder" {
+#  name               = var.citrix_application_folder
+#}
 
 
 /*
