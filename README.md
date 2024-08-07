@@ -72,6 +72,92 @@ $(go env GOPATH)/src/github.com/terraform-docs/terraform-docs/bin/$(uname | tr '
 
 ## Usage
 
+**Hauptmodul: customer.auto.tfvars** <br>
+Kundenspezifische Daten: Mandantekürzel (z.b. m001)
+```hcl
+# Default input
+mandant_prefix_m = "m###"
+
+# Modul citrix_pa / for each Schlaufe
+applications = [
+  {
+    citrix_apllication_name                    = "Name der App sichtbar für Administrator" # wird in der Schlaufe mit Mandantenprefix erstellt
+    citrix_apllication_description             = "Application Description"
+    citrix_apllication_published_name          = "Name der App sichtbar für user"
+    citrix_application_command_line_arguments  = "“%**”" # aktuell noch ein Bug, es kann kein leerer Wert angegeben werden
+    citrix_application_command_line_executable = "Pfad zur exe"
+    citrix_application_working_directory       = "Arbeitsverzeichnis"
+    citrix_deliverygroup_name                  = ["6919cebe-4151-40a8-8efd-9047694377a6"] #wird später über ein modul gelöst
+    citrix_apllication_visibility              = ["domain\\username"]                     # Benutzer oder Gruppe definieren
+    # citrix_application_icon                    = ""
+  },
+
+  # weitere Applikationen müssen einzeln erfasst werden: z.b. - hier ein konkretes Beispiel
+
+  {
+    citrix_apllication_name                    = "Notepad"
+    citrix_apllication_description             = "Test mit Terraform"
+    citrix_apllication_published_name          = "Notepad"
+    citrix_application_command_line_arguments  = "“%**”" # aktuell noch ein Bug, es kann kein leerer Wert angegeben werden
+    citrix_application_command_line_executable = "C:\\Windows\\system32\\notepad.exe"
+    citrix_application_working_directory       = "%HOMEDRIVE%%HOMEPATH%"
+    citrix_deliverygroup_name                  = ["6919cebe-4151-40a8-8efd-9047694377a6"]
+    citrix_apllication_visibility              = ["m002\\axdlet"]
+    # citrix_application_icon                    = "C:\\Windows\\system32\\notepad.exe"
+  }
+]
+
+```
+**Hauptmodul: variables.tf** <br>
+definition der variablen
+```hcl
+variable "mandant_prefix_m" {
+  description = "mandant prefix"
+  type        = string
+}
+
+variable "applications" {
+  description = "Applikations Variablen"
+  type = list(object({
+    citrix_apllication_name                    = string
+    citrix_apllication_description             = string
+    citrix_apllication_published_name          = string
+    citrix_application_command_line_arguments  = string
+    citrix_application_command_line_executable = string
+    citrix_application_working_directory       = string
+    citrix_deliverygroup_name                  = list(string)
+    citrix_apllication_visibility              = list(string)
+    # citrix_application_icon                  = string
+  }))
+}
+
+```
+**Hauptmodul: main.tf** <br>
+Aufruf des Moduls vom Hauptmodul
+```hcl
+module "citrix_pa" {
+  source  = "gitlab.abraxas-tools.ch/sit/terraform-citrixdaas-pa-mvd/local"
+  version = "#.#.#"
+
+  for_each = { for app in var.applications : "${var.mandant_prefix_m}-${app.citrix_apllication_name}" => app }
+
+  citrix_apllication_name                    = each.key
+  citrix_apllication_description             = each.value.citrix_apllication_description
+  citrix_apllication_published_name          = each.value.citrix_apllication_published_name
+  citrix_application_command_line_arguments  = each.value.citrix_application_command_line_arguments
+  citrix_application_command_line_executable = each.value.citrix_application_command_line_executable
+  citrix_application_working_directory       = each.value.citrix_application_working_directory
+  citrix_deliverygroup_name                  = each.value.citrix_deliverygroup_name
+  citrix_apllication_visibility              = each.value.citrix_apllication_visibility
+  #  citrix_application_icon                    = each.value.citrix_application_icon
+
+
+  # nicht im Loop (Folder für alle Apps identisch, da Kundenbasiert) Seperates Modul "terraform-citrixdaas-af-mvd" verwenden falls benötigt, sonst auskommentieren (Folder path ist optional)
+  citrix_application_folder_path = module.citrix_af.citrix_application_folder_path
+  depends_on                     = [module.citrix_af]
+}
+```
+
 ### Running the binary directly
 
 To run and generate documentation into README within a directory:
