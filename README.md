@@ -466,7 +466,7 @@ No modules.
 | <a name="input_citrix_apllication_visibility"></a> [citrix\_apllication\_visibility](#input\_citrix\_apllication\_visibility) | The visibility of the application | `set(string)` | n/a | yes |
 | <a name="input_citrix_application_command_line_arguments"></a> [citrix\_application\_command\_line\_arguments](#input\_citrix\_application\_command\_line\_arguments) | cmd arguments | `string` | n/a | yes |
 | <a name="input_citrix_application_command_line_executable"></a> [citrix\_application\_command\_line\_executable](#input\_citrix\_application\_command\_line\_executable) | The command line executable | `string` | n/a | yes |
-| <a name="input_citrix_application_folder"></a> [citrix\_application\_folder](#input\_citrix\_application\_folder) | Citrix Application folder | `string` | n/a | yes |
+| <a name="input_citrix_application_folder_path"></a> [citrix\_application\_folder\_path](#input\_citrix\_application\_folder\_path) | Citrix Application folder path | `string` | n/a | yes |
 | <a name="input_citrix_application_working_directory"></a> [citrix\_application\_working\_directory](#input\_citrix\_application\_working\_directory) | The working directory | `string` | n/a | yes |
 | <a name="input_citrix_deliverygroup_name"></a> [citrix\_deliverygroup\_name](#input\_citrix\_deliverygroup\_name) | Delivery group | `set(string)` | n/a | yes |
 
@@ -474,5 +474,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_citrix_published_apllication_name"></a> [citrix\_published\_apllication\_name](#output\_citrix\_published\_apllication\_name) | Name Published Application |
+| <a name="output_citrix_published_apllication_name"></a> [citrix\_published\_apllication\_name](#output\_citrix\_published\_apllication\_name) | Citrix Published Application Name |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
