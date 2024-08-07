@@ -474,5 +474,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_citrix_published_apllication_name"></a> [citrix\_published\_apllication\_name](#output\_citrix\_published\_apllication\_name) | Name Published Application |
+| <a name="output_citrix_published_apllication_name"></a> [citrix\_published\_apllication\_name](#output\_citrix\_published\_apllication\_name) | Citrix Published Application Name |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
