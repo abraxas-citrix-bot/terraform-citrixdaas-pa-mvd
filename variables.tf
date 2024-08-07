@@ -43,7 +43,7 @@ variable "citrix_apllication_visibility" {
 #   description = "The icon of the application"
 # }
 
-variable "citrix_application_folder" {
-  description = "Citrix Application folder"
+variable "citrix_application_folder_path" {
+  description = "Citrix Application folder path"
   type        = string
 }
