@@ -1,0 +1,22 @@
+# Modul Citrix Published Applications
+module "citrix_pa" {
+  source  = "gitlab.abraxas-tools.ch/sit/terraform-citrixdaas-pa-mvd/local"
+  version = "#.#.#"
+
+  for_each = { for app in var.applications : "${var.mandant_prefix_m}-${app.citrix_apllication_name}" => app }
+
+  citrix_apllication_name                    = each.key
+  citrix_apllication_description             = each.value.citrix_apllication_description
+  citrix_apllication_published_name          = each.value.citrix_apllication_published_name
+  citrix_application_command_line_arguments  = each.value.citrix_application_command_line_arguments
+  citrix_application_command_line_executable = each.value.citrix_application_command_line_executable
+  citrix_application_working_directory       = each.value.citrix_application_working_directory
+  citrix_deliverygroup_name                  = each.value.citrix_deliverygroup_name
+  citrix_apllication_visibility              = each.value.citrix_apllication_visibility
+  #  citrix_application_icon                    = each.value.citrix_application_icon
+
+
+  # nicht im Loop (Folder für alle Apps identisch, da Kundenbasiert) Seperates Modul "terraform-citrixdaas-af-mvd" verwenden falls benötigt, sonst auskommentieren (Folder path ist optional)
+  citrix_application_folder_path = module.citrix_af.citrix_application_folder_path
+  depends_on                     = [module.citrix_af]
+}
