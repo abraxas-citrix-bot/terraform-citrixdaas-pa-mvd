@@ -530,7 +530,7 @@ MIT License - Copyright (c) 2021 The terraform-docs Authors.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_citrix"></a> [citrix](#provider\_citrix) | 0.6.3 |
+| <a name="provider_citrix"></a> [citrix](#provider\_citrix) | 0.6.2 |
 
 ## Modules
 

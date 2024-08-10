@@ -1,2 +1,0 @@
-- Dima - Dmitrij.Lejkin@abraxas.ch
-- Cediric
