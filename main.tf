@@ -13,3 +13,8 @@ resource "citrix_application" "published_application" {
   # icon            = aktuell noch zu mühsam, comming soon
   limit_visibility_to_users = var.citrix_apllication_visibility
 }
+
+
+resource "citrix_application_icon" "bank-icon" {
+  raw_data = filebase64("icons/citrix.ico")
+}

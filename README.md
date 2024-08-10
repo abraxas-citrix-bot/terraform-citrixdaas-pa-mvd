@@ -541,6 +541,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [citrix_application.published_application](https://registry.terraform.io/providers/citrix/citrix/1.0.0/docs/resources/application) | resource |
+| [citrix_application_icon.bank-icon](https://registry.terraform.io/providers/citrix/citrix/1.0.0/docs/resources/application_icon) | resource |
 
 ## Inputs
 
