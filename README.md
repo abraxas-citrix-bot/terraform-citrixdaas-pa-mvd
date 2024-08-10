@@ -524,13 +524,13 @@ MIT License - Copyright (c) 2021 The terraform-docs Authors.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
-| <a name="requirement_citrix"></a> [citrix](#requirement\_citrix) | >=0.6.1 |
+| <a name="requirement_citrix"></a> [citrix](#requirement\_citrix) | = 1.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_citrix"></a> [citrix](#provider\_citrix) | 0.6.3 |
+| <a name="provider_citrix"></a> [citrix](#provider\_citrix) | 1.0.0 |
 
 ## Modules
 
@@ -540,7 +540,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [citrix_application.published_application](https://registry.terraform.io/providers/citrix/citrix/latest/docs/resources/application) | resource |
+| [citrix_application.published_application](https://registry.terraform.io/providers/citrix/citrix/1.0.0/docs/resources/application) | resource |
 
 ## Inputs
 

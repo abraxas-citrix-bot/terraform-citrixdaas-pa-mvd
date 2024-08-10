@@ -54,9 +54,9 @@ repos:
       - id: check-symlinks
       - id: mixed-line-ending
       - id: detect-private-key
-      - id: pretty-format-json
-        args:
-          - --allow-missing-credentials
+#      - id: pretty-format-json
+#        args:
+#          - --allow-missing-credentials
       - id: no-commit-to-branch
         args:
           - -b master

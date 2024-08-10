@@ -7,7 +7,7 @@ terraform {
 
     citrix = {
       source  = "citrix/citrix"
-      version = ">=0.6.1"
+      version = "= 1.0.0"
     }
 
   }
