@@ -1,4 +1,4 @@
-# Create Published Application
+# Create Published Application für den Testuser
 resource "citrix_application" "published_application" {
   name                    = var.citrix_apllication_name
   description             = var.citrix_apllication_description
