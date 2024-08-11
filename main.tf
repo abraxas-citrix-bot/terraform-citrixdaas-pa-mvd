@@ -15,6 +15,7 @@ resource "citrix_application" "published_application" {
 }
 
 
-resource "citrix_application_icon" "bank-icon" {
+/* resource "citrix_application_icon" "bank-icon" {
   raw_data = filebase64("icons/citrix.ico")
 }
+ */
