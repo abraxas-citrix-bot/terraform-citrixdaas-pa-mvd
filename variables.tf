@@ -1,14 +1,14 @@
-variable "citrix_apllication_name" {
+variable "citrix_application_name" {
   description = "The name of the application"
   type        = string
 }
 
-variable "citrix_apllication_description" {
+variable "citrix_application_description" {
   description = "Application Description"
   type        = string
 }
 
-variable "citrix_apllication_published_name" {
+variable "citrix_application_published_name" {
   description = "The name of the application"
   type        = string
 }
@@ -30,18 +30,13 @@ variable "citrix_application_working_directory" {
 
 variable "citrix_deliverygroup_name" {
   description = "Delivery group"
-  type        = set(string)
+  type        = list(string)
 }
 
-variable "citrix_apllication_visibility" {
+variable "citrix_application_visibility" {
   description = "The visibility of the application"
-  type        = set(string)
+  type        = list(string)
 }
-
-# variable "citrix_application_icon" {
-#   type        = string
-#   description = "The icon of the application"
-# }
 
 variable "citrix_application_folder_path" {
   description = "Citrix Application folder path"
