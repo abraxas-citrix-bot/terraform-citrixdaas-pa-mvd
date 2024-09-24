@@ -1,8 +1,7 @@
-# Create Published Application für den Testuser
 resource "citrix_application" "published_application" {
-  name                    = var.citrix_apllication_name
-  description             = var.citrix_apllication_description
-  published_name          = var.citrix_apllication_published_name
+  name                    = var.citrix_application_name
+  description             = var.citrix_application_description
+  published_name          = var.citrix_application_published_name
   application_folder_path = var.citrix_application_folder_path
   installed_app_properties = {
     command_line_arguments  = var.citrix_application_command_line_arguments
@@ -11,11 +10,5 @@ resource "citrix_application" "published_application" {
   }
   delivery_groups = var.citrix_deliverygroup_name
   # icon            = aktuell noch zu mühsam, comming soon
-  limit_visibility_to_users = var.citrix_apllication_visibility
+  limit_visibility_to_users = var.citrix_application_visibility
 }
-
-
-/* resource "citrix_application_icon" "bank-icon" {
-  raw_data = filebase64("icons/citrix.ico")
-}
- */
