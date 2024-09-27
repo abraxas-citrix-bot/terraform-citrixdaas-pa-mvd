@@ -554,6 +554,7 @@ No modules.
 | <a name="input_citrix_application_published_name"></a> [citrix\_application\_published\_name](#input\_citrix\_application\_published\_name) | The name of the application | `string` | n/a | yes |
 | <a name="input_citrix_application_visibility"></a> [citrix\_application\_visibility](#input\_citrix\_application\_visibility) | The visibility of the application | `list(string)` | n/a | yes |
 | <a name="input_citrix_application_working_directory"></a> [citrix\_application\_working\_directory](#input\_citrix\_application\_working\_directory) | The working directory | `string` | n/a | yes |
+| <a name="input_citrix_delivery_group_id"></a> [citrix\_delivery\_group\_id](#input\_citrix\_delivery\_group\_id) | ID von Delivery Group | `string` | n/a | yes |
 | <a name="input_citrix_deliverygroup_name"></a> [citrix\_deliverygroup\_name](#input\_citrix\_deliverygroup\_name) | Delivery group | `list(string)` | n/a | yes |
 
 ## Outputs
