@@ -42,3 +42,8 @@ variable "citrix_application_folder_path" {
   description = "Citrix Application folder path"
   type        = string
 }
+
+variable "citrix_delivery_group_id" {
+  description = "ID von Delivery Group"
+  type        = string
+}

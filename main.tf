@@ -11,4 +11,11 @@ resource "citrix_application" "published_application" {
   delivery_groups = var.citrix_deliverygroup_name
   # icon            = aktuell noch zu mühsam, comming soon
   limit_visibility_to_users = var.citrix_application_visibility
+  # delivery group priority
+  delivery_groups_priority = [
+    {
+      id       = var.citrix_delivery_group_id
+      priority = 0
+    },
+  ]
 }
