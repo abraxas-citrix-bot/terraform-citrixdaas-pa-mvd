@@ -14,5 +14,5 @@ resource "citrix_application" "published_application" {
 }
 
 resource "citrix_application_icon" "application_icon" {
-  raw_data = filebase64("${path.module}/${var.citrix_application_icon_path}")
+  raw_data = filebase64(var.citrix_application_icon)
 }
