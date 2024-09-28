@@ -524,13 +524,13 @@ MIT License - Copyright (c) 2021 The terraform-docs Authors.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
-| <a name="requirement_citrix"></a> [citrix](#requirement\_citrix) | = 1.0.3 |
+| <a name="requirement_citrix"></a> [citrix](#requirement\_citrix) | = 1.0.4 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_citrix"></a> [citrix](#provider\_citrix) | 1.0.3 |
+| <a name="provider_citrix"></a> [citrix](#provider\_citrix) | 1.0.4 |
 
 ## Modules
 
@@ -540,7 +540,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [citrix_application.published_application](https://registry.terraform.io/providers/citrix/citrix/1.0.3/docs/resources/application) | resource |
+| [citrix_application.published_application](https://registry.terraform.io/providers/citrix/citrix/1.0.4/docs/resources/application) | resource |
+| [citrix_application_icon.application_icon](https://registry.terraform.io/providers/citrix/citrix/1.0.4/docs/resources/application_icon) | resource |
 
 ## Inputs
 
@@ -550,11 +551,11 @@ No modules.
 | <a name="input_citrix_application_command_line_executable"></a> [citrix\_application\_command\_line\_executable](#input\_citrix\_application\_command\_line\_executable) | The command line executable | `string` | n/a | yes |
 | <a name="input_citrix_application_description"></a> [citrix\_application\_description](#input\_citrix\_application\_description) | Application Description | `string` | n/a | yes |
 | <a name="input_citrix_application_folder_path"></a> [citrix\_application\_folder\_path](#input\_citrix\_application\_folder\_path) | Citrix Application folder path | `string` | n/a | yes |
+| <a name="input_citrix_application_icon_path"></a> [citrix\_application\_icon\_path](#input\_citrix\_application\_icon\_path) | Pfad für Icon | `string` | n/a | yes |
 | <a name="input_citrix_application_name"></a> [citrix\_application\_name](#input\_citrix\_application\_name) | The name of the application | `string` | n/a | yes |
 | <a name="input_citrix_application_published_name"></a> [citrix\_application\_published\_name](#input\_citrix\_application\_published\_name) | The name of the application | `string` | n/a | yes |
 | <a name="input_citrix_application_visibility"></a> [citrix\_application\_visibility](#input\_citrix\_application\_visibility) | The visibility of the application | `list(string)` | n/a | yes |
 | <a name="input_citrix_application_working_directory"></a> [citrix\_application\_working\_directory](#input\_citrix\_application\_working\_directory) | The working directory | `string` | n/a | yes |
-| <a name="input_citrix_delivery_group_id"></a> [citrix\_delivery\_group\_id](#input\_citrix\_delivery\_group\_id) | ID von Delivery Group | `string` | n/a | yes |
 | <a name="input_citrix_deliverygroup_name"></a> [citrix\_deliverygroup\_name](#input\_citrix\_deliverygroup\_name) | Delivery group | `list(string)` | n/a | yes |
 
 ## Outputs
