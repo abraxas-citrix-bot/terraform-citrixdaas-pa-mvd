@@ -8,14 +8,11 @@ resource "citrix_application" "published_application" {
     command_line_executable = var.citrix_application_command_line_executable
     working_directory       = var.citrix_application_working_directory
   }
-  delivery_groups = var.citrix_deliverygroup_name
-  # icon            = aktuell noch zu mühsam, comming soon
+  delivery_groups           = var.citrix_deliverygroup_name
+  icon                      = citrix_application_icon.application_icon.id
   limit_visibility_to_users = var.citrix_application_visibility
-  # delivery group priority
-  delivery_groups_priority = [
-    {
-      id       = var.citrix_delivery_group_id
-      priority = 0
-    },
-  ]
+}
+
+resource "citrix_application_icon" "application_icon" {
+  raw_data = filebase64("${path.module}/${var.citrix_application_icon_path}")
 }
