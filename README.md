@@ -551,7 +551,7 @@ No modules.
 | <a name="input_citrix_application_command_line_executable"></a> [citrix\_application\_command\_line\_executable](#input\_citrix\_application\_command\_line\_executable) | The command line executable | `string` | n/a | yes |
 | <a name="input_citrix_application_description"></a> [citrix\_application\_description](#input\_citrix\_application\_description) | Application Description | `string` | n/a | yes |
 | <a name="input_citrix_application_folder_path"></a> [citrix\_application\_folder\_path](#input\_citrix\_application\_folder\_path) | Citrix Application folder path | `string` | n/a | yes |
-| <a name="input_citrix_application_icon_path"></a> [citrix\_application\_icon\_path](#input\_citrix\_application\_icon\_path) | Pfad für Icon | `string` | n/a | yes |
+| <a name="input_citrix_application_icon"></a> [citrix\_application\_icon](#input\_citrix\_application\_icon) | Path of Icon | `string` | n/a | yes |
 | <a name="input_citrix_application_name"></a> [citrix\_application\_name](#input\_citrix\_application\_name) | The name of the application | `string` | n/a | yes |
 | <a name="input_citrix_application_published_name"></a> [citrix\_application\_published\_name](#input\_citrix\_application\_published\_name) | The name of the application | `string` | n/a | yes |
 | <a name="input_citrix_application_visibility"></a> [citrix\_application\_visibility](#input\_citrix\_application\_visibility) | The visibility of the application | `list(string)` | n/a | yes |
