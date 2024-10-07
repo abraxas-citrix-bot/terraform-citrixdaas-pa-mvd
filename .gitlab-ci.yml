@@ -17,6 +17,7 @@ stages:
   - validate
   - version
   - publish
+  - sync
 
 validate:
   stage: validate
@@ -25,6 +26,15 @@ validate:
     - cd ${CI_PROJECT_DIR}
     - gitlab-terraform init
     - gitlab-terraform validate
+
+
+sync_to_github:
+  stage: sync
+  script:
+    - git remote add github https://DimaAbx:${GITHUB_TOKEN}@https://github.com/DimaAbx/terraform-citrixdaas-pa-mvd.git
+    - git push github main
+  only:
+    - main  # Nur auf dem Haupt-Branch oder wenn gewünscht
 
 semantic_release-ci:
   stage: version
