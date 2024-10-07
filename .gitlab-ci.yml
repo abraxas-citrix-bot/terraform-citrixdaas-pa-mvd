@@ -31,6 +31,9 @@ validate:
 sync_to_github:
   stage: sync
   script:
+    - apt-get update -y
+    - apt-get install git -y  # Git installieren
+    - git --version  # Überprüfen, ob Git installiert ist
     - git remote add github https://DimaAbx:${GITHUB_TOKEN}@https://github.com/DimaAbx/terraform-citrixdaas-pa-mvd.git
     - git push github main
   only:
