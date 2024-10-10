@@ -1,9 +1,0 @@
-{
-    "branches": ["main"],
-    "tagFormat": "${version}",
-    "verifyConditions": "@semantic-release/gitlab",
-    "prepare": false,
-    "publish": "@semantic-release/gitlab",
-    "success": false,
-    "fail": false
-}
