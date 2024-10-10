@@ -1,6 +1,6 @@
 # variables.tf
 
-variable "mandant_prefix_m" {
+variable "mandant_prefix" {
   description = "mandant prefix"
   type        = string
 }
