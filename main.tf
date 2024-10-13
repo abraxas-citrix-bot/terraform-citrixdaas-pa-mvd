@@ -12,7 +12,3 @@ resource "citrix_application" "published_application" {
   icon                      = citrix_application_icon.application_icon.id
   limit_visibility_to_users = var.citrix_application_visibility
 }
-
-resource "citrix_application_icon" "application_icon" {
-  raw_data = var.citrix_application_icon
-}
