@@ -1,0 +1,26 @@
+terraform {
+  required_version = ">=1.2"
+  required_providers {
+
+    random = {
+      source  = "hashicorp/random"
+      version = "= 3.6.2" # Stellen Sie sicher, dass Sie die gewünschte Version angeben
+    }
+
+    citrix = {
+      source  = "citrix/citrix"
+      version = "=1.0.4"
+    }
+
+  }
+
+}
+# This block specifies the Citrix Provider configuration.
+
+provider "citrix" {
+  cvad_config = {
+    customer_id   = var.customer_id
+    client_id     = var.client_id
+    client_secret = var.client_secret
+  }
+}
