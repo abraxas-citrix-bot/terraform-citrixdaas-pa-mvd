@@ -9,6 +9,6 @@ resource "citrix_application" "published_application" {
     working_directory       = var.citrix_application_working_directory
   }
   delivery_groups           = var.citrix_deliverygroup_name
-  icon                      = var.citrix_application_icon
+  #icon                      = var.citrix_application_icon
   limit_visibility_to_users = var.citrix_application_visibility
 }
