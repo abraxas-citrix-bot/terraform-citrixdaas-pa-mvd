@@ -43,7 +43,8 @@ variable "citrix_application_folder_path" {
   type        = string
 }
 
-variable "citrix_application_icon" {
-  description = "Path of Icon"
-  type        = string
-}
+
+#variable "citrix_application_icon" {
+#  description = "Path of Icon"
+#  type        = string
+#}
