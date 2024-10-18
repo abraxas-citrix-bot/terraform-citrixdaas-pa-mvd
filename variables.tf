@@ -30,7 +30,7 @@ variable "citrix_application_working_directory" {
 
 variable "citrix_deliverygroup_name" {
   description = "Delivery group"
-  type        = list(string)
+  type        = string #list(string)
 }
 
 variable "citrix_application_visibility" {
@@ -43,8 +43,7 @@ variable "citrix_application_folder_path" {
   type        = string
 }
 
-
-#variable "citrix_application_icon" {
-#  description = "Path of Icon"
-#  type        = string
-#}
+variable "citrix_application_icon" {
+  description = "Path of Icon"
+  type        = string
+}
